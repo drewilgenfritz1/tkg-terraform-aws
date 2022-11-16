@@ -8,8 +8,8 @@ spec:
   interval: 30s
   ref:
     branch: main
-  # url: https://github.com/drewilgenfritz1/tkg-terraform-aws
-  url: https://github.com/tf-controller/helloworld
+  url: https://github.com/drewilgenfritz1/tkg-terraform-aws
+  # url: https://github.com/tf-controller/helloworld
 
 ---
 apiVersion: infra.contrib.fluxcd.io/v1alpha1
