@@ -20,7 +20,7 @@ variable "base_cidr_block2" {
 variable "jumpbox-ami" {
     #Custom AMI with all necessary CLIs already installed
     description = "Ubuntu 16.04"
-    #default = "ami-0b0ea68c435eb488d"
-    default = "ami-061716e67fd4bc8b3"
+    default = "ami-0b0ea68c435eb488d"
+    # default = "ami-061716e67fd4bc8b3"
   
 }
