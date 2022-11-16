@@ -4,12 +4,12 @@ variable "aws_region" {
 
 variable "base_cidr_block" {
   description = "main cidr block"
-  default = "172.16.0.0/16"
+  default = "172.17.0.0/16"
 }
 
 variable "base_cidr_block2" {
   description = "main cidr block"
-  default = "172.16.0.0/16"
+  default = "172.17.0.0/16"
 }
 
 # variable "availability_zones" {

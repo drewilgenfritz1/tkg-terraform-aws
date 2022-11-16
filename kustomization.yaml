@@ -1,6 +1,10 @@
 apiVersion: kustomize.config.k8s.io/v1beta2
 kind: Kustomization
 resources:
-  - instance2.tf
+  - instance.tf
   - main.tf
   - variables.tf
+  - outputs.tf
+  - route.tf
+  - securitygroups.tf
+  - vpc.tf
