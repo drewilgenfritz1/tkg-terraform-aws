@@ -20,7 +20,7 @@ metadata:
 spec:
   interval: 1m
   approvePlan: auto
-  path: ./
+  path: ./terraform/
   sourceRef:
     kind: GitRepository
     name: tf-packages
