@@ -1,0 +1,4 @@
+resources:
+  - instance2.tf
+  - main.tf
+  - variables.tf
