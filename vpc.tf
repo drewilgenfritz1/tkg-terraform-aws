@@ -110,13 +110,3 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "attachment-transit-gw" {
   vpc_id             = aws_vpc.TKGVPC.id
 }
 
-resource "aws_s3_bucket" "state-files" {
-  bucket = "terraform-state-gitops"
-
-  versioning {
-    enabled = true
-  }
-  tags = {
-    Name = "terraform-state-gitops"
-  }
-}
