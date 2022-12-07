@@ -27,15 +27,6 @@ resource "aws_security_group_rule" "https_ingress" {
     
 }
 
-resource "aws_security_group_rule" "https_egress" {
-    type = "egress"
-    from_port         = 443
-    to_port           = 443
-    protocol          = "tcp"
-    cidr_blocks       = ["0.0.0.0/0"]
-    security_group_id = aws_security_group.jumpbox-ssh.id
-    
-}
 
 resource "aws_security_group_rule" "ephemerals_ingress" {
     type = "ingress"
@@ -47,9 +38,9 @@ resource "aws_security_group_rule" "ephemerals_ingress" {
     
 }
 
-resource "aws_security_group_rule" "ephemerals_egress" {
+resource "aws_security_group_rule" "default_egress" {
     type = "egress"
-    from_port         = 1024
+    from_port         = 0
     to_port           = 65535
     protocol          = "tcp"
     cidr_blocks       = ["0.0.0.0/0"]

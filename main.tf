@@ -5,9 +5,11 @@ terraform {
       version = "4.19.0"
     }
   }
-}
-
-provider "aws" {
-  region = var.aws_region
-   
+  backend "s3" {
+    bucket = "terraform-state-gitops"
+    region = "us-east-1"
+    key = "terraform.tfstate"
+    encrypt = true
+  
+  }
 }

@@ -2,7 +2,7 @@ resource "aws_route_table" "priv-rt" {
     vpc_id = aws_vpc.TKGVPC.id
 
     tags = {
-      "Name" = "tkgvpc-priv-rt"
+      "Name" = "${var.env}-priv-rt"
     }
   
 }
@@ -40,7 +40,7 @@ resource "aws_route_table" "pub-rt" {
     vpc_id = aws_vpc.TKGVPC.id
 
     tags = {
-      "Name" = "tkgvpc-pub-rt"
+      "Name" = "${var.env}-pub-rt"
     }
   
 }
