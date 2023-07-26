@@ -62,7 +62,5 @@ output "name" {
   value = var.cluster_name
 }
 
-output "cluster-key"{
-  value = aws_key_pair.cluster-key.key_name
-}
+
 

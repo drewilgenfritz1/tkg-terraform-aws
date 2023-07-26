@@ -2,7 +2,7 @@ resource "aws_vpc" "TKGVPC" {
     cidr_block = var.base_cidr_block
 
     tags = {
-      "Name" = "testVPC"
+      "Name" = "sandbox"
     }
 }
 
