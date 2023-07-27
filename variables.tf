@@ -39,6 +39,10 @@ variable "public-cidr-c" {
   
 }
 
+variable "keypair" {
+  
+}
+
 
 # # variable "cidrs" {
 # #   type = map(string)

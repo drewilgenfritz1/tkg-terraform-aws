@@ -1,7 +1,7 @@
 resource "aws_instance" "jumpbox" {
     ami  = var.jumpbox-ami
     instance_type = "t3.medium"
-    key_name = "tmc-sandbox"
+    key_name = var.keypair
     vpc_security_group_ids = [ aws_security_group.jumpbox-ssh.id ]
     subnet_id = aws_subnet.pub-a.id
     
@@ -22,7 +22,7 @@ resource "aws_instance" "harbor" {
   instance_type = "t3.xlarge"               # Replace with your desired instance type
   subnet_id     = aws_subnet.pub-a.id
   vpc_security_group_ids = [aws_security_group.jumpbox-ssh.id]  # Allow SSH access from bastion host
-  key_name = "tmc-sandbox"
+  key_name = var.keypair
   ebs_block_device {
       device_name = "/dev/sda1"
       volume_size = 128
