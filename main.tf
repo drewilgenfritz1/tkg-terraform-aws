@@ -57,6 +57,12 @@ resource "null_resource" "kubectl" {
     }
 }
 
+resource "kubernetes_namespace" "kapp" {
+  metadata {
+    name = "kapp-controller"
+  }
+  
+}
 
 resource "carvel_kapp" "kapp-controller" {
   app = "kapp-controller"
