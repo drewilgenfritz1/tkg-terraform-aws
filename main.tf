@@ -51,24 +51,11 @@ module "cert-manager" {
   cluster_issuer_private_key_secret_name = "tmc-cert-manager-private-key"
 }
 
-# module "harbor" {
-#   source = "./modules/terraform-digitalocean-doks-harbor"
-
-#   harbor_ext_url = var.harbor_ext_url
-
-#   doks_cluster_name = var.doks_cluster_name
-
-#   spaces_access_id  = var.spaces_access_id
-#   spaces_secret_key = var.spaces_secret_key
-# }
-
 resource "null_resource" "kubectl" {
     provisioner "local-exec" {
         command = "aws eks --region ${var.aws_region} update-kubeconfig --name ${var.cluster_name}"
     }
 }
-
-
 
 
 resource "carvel_kapp" "kapp-controller" {
