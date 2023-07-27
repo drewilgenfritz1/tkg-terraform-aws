@@ -67,34 +67,15 @@ resource "null_resource" "kubectl" {
         command = "aws eks --region ${var.aws_region} update-kubeconfig --name ${var.cluster_name}"
     }
 }
-resource "kubernetes_namespace" "harbor" {
-  metadata {
-    name = "harbor"
-  } 
-}
 
-resource "kubernetes_namespace" "kapp" {
-  metadata {
-    name = "kapp"
-  } 
-}
+
+
 
 resource "carvel_kapp" "kapp-controller" {
   app = "kapp-controller"
-  namespace = "kapp"
+  namespace = "kapp-controller"
 
   config_yaml = "${file("kapp-controller.yml")}"
   
 }
 
-resource "helm_release" "harbor" {
-  name = "harbor"
-  namespace = "harbor"
-  repository = "./"
-  chart = "harbor-1.12.2.tgz"
-#   version = "16.7.1"
-
-  values = [
-    "${file("harbor-values.yaml")}"
-  ]
-}
