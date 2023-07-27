@@ -33,6 +33,10 @@ resource "aws_eip" "tkg-eip" {
   
 }
 
+resource "aws_eip" "eks-eip" {
+  vpc = true
+}
+
 resource "aws_subnet" "priv-a" {
   vpc_id     = aws_vpc.TKGVPC.id
   cidr_block = var.private-cidr-a
