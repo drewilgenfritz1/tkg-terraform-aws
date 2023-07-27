@@ -17,8 +17,10 @@
 
 ```
 terraform init
-terraform plan --var-file sandbox.tfvars -out=plan
-terraform apply plan -auto-approve
+terraform plan --var-file sandbox.tfvars -out=tfplan
+# If you want to further inspect the output use the following command
+terraform show tfplan
+terraform apply -auto-approve tfplan
 ```
 
 ```
