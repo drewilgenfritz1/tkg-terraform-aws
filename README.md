@@ -14,9 +14,11 @@
 - update tfvars file with env specific variables
 - Run the following
 
-> terraform init
-> terraform plan --var-file sandbox.tfvars -out=plan
-> terraform apply plan -auto-approve
+```
+terraform init
+terraform plan --var-file sandbox.tfvars -out=plan
+terraform apply plan -auto-approve
+```
 
 aws eks update-kubeconfig $CLUSTER_NAME
 export KUBE_CONFIG_PATH=/home/drew/.kube/config
