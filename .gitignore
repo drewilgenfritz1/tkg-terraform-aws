@@ -32,8 +32,9 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
-.crt
-.key
-.pem
-.csr
-.ext
+*.crt
+*.key
+*.pem
+*.csr
+*.ext
+*.terraform
