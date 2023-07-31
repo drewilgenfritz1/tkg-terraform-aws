@@ -45,11 +45,17 @@ provider "carvel" {
 }
 
 module "cert-manager" {
-  source  = "./modules/cert-manager"
-  cluster_issuer_email                   = "admin@mysite.com"
-  cluster_issuer_name                    = "tmc-cert-manager"
-  cluster_issuer_private_key_secret_name = "tmc-cert-manager-private-key"
+  source  = "terraform-iaac/cert-manager/kubernetes"
+  version = "2.5.1"
+  # insert the 1 required variable here
 }
+
+# module "cert-manager" {
+#   source  = "./modules/cert-manager"
+#   cluster_issuer_email                   = "admin@mysite.com"
+#   cluster_issuer_name                    = "tmc-cert-manager"
+#   cluster_issuer_private_key_secret_name = "tmc-cert-manager-private-key"
+# }
 
 resource "null_resource" "kubectl" {
     provisioner "local-exec" {
