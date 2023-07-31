@@ -18,7 +18,7 @@ resource "aws_instance" "jumpbox" {
 
 # # Create a Harbor instance in a public subnet
 resource "aws_instance" "harbor" {
-  ami           = "ami-0f5c680124b2a2c4e"  # Replace with the AMI ID for your desired Harbor instance
+  ami           = "ami-053b0d53c279acc90"  # Replace with the AMI ID for your desired Harbor instance
   instance_type = "t3.xlarge"               # Replace with your desired instance type
   subnet_id     = aws_subnet.pub-a.id
   vpc_security_group_ids = [aws_security_group.jumpbox-ssh.id]  # Allow SSH access from bastion host
